@@ -1,7 +1,10 @@
 #!/bin/bash
 
-num=20
-numy=30
+num=$1
 
-sum=$((num+numy))
-echo "sum of two numbers is :$sum"
+numy=$2
+read num
+read numy
+
+sum=$(($num+$numy))
+echo "sum of $num and $numy numbers is :$sum"
