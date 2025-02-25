@@ -1,16 +1,16 @@
 #!/bin/bash
 
-USERID=$( id - u )
-Check_Root(){
-    if[ $USERID -ne 0 ]
-    then 
-        echo "please run with rooot priviliges"
-        exit 1
+USERID=$( id -u )
+Check_Root() {
+    if [ $USERID -ne 0 ]
+    then
+         echo "plese run with root privilages"
+         exit 1
     fi
 }
 Check_Root
  
- Validate(){
+ Validate() {
     if[ $1 -ne 0 ]
     then 
         echo "$2 command is failed"
