@@ -20,6 +20,7 @@ VALIDATE() {
 if [ $USERID -ne 0 ]
 then
      echo "please script run with root priviliges "
+     exit 1
     
 fi
 
