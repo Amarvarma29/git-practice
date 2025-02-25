@@ -1,19 +1,19 @@
 #!/bin/bash
 
-USERID=$(id - u)
-CHECK-ROOT(){
+USERID=$( id - u )
+Check_Root(){
     if[ $USERID -ne 0 ]
     then 
         echo "please run with rooot priviliges"
         exit 1
     fi
 }
-CHECK-ROOT 
+Check_Root
  
- VALIDATE(){
-    if[ $? -ne 0 ]
+ Validate(){
+    if[ $1 -ne 0 ]
     then 
-        echo "$1 command is failed"
+        echo "$2 command is failed"
         exit 1
     else 
        echo "$2 command is succes"
@@ -25,12 +25,12 @@ CHECK-ROOT
  do 
    dnf list installed $package
    if[ $? -ne 0 ]
-   then 
+  then 
        echo "$package is not installed going intall it"
        dnf install $package -y
-       VALIDATE $? "Installing $package"
+       Validate $? "Installing $package"
     else 
        echo "$package isalredy installed  nothinhg to do"
     fi 
    
-done
+  done
