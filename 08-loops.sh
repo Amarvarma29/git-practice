@@ -11,7 +11,7 @@ Check_Root() {
 Check_Root
  
  Validate() {
-    if[ $1 -ne 0 ]
+    if [ $1 -ne 0 ]
     then 
         echo "$2 command is failed"
         exit 1
